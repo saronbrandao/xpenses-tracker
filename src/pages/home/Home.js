@@ -10,7 +10,7 @@ const Home = () => {
   const { documents, error } = useCollection('transactions');
 
   console.log(documents);
-
+  console.log(documents);
   return (
     <div className={styles.container}>
       <div className={styles.content}>
