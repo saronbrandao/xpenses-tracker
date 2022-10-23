@@ -9,11 +9,13 @@ const Home = () => {
   const { user } = useAuthContext();
   const { documents, error } = useCollection('transactions');
 
+  console.log(documents);
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         {error && <p>{error}</p>}
-        {documents && <TransactionsList transactions={documents} />}
+        {documents && <TransactionList transactions={documents} />}
       </div>
       <div className={styles.sidebar}>
         <TransactionForm uid={user.uid} />

@@ -12,7 +12,7 @@ export const useCollection = (collection) => {
       (snapshot) => {
         let results = [];
         snapshot.docs.forEach((doc) => {
-          results.push({ ...doc.data, id: doc.id });
+          results.push({ ...doc.data(), id: doc.id });
         });
 
         //update state
