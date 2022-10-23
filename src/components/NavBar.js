@@ -8,8 +8,6 @@ const NavBar = () => {
   const { logout } = useLogout();
   const { user } = useAuthContext();
 
-  console.log(user);
-
   return (
     <nav className={styles.navbar}>
       <ul>
