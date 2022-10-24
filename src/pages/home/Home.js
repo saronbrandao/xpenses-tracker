@@ -7,10 +7,11 @@ import styles from './Home.module.css';
 
 const Home = () => {
   const { user } = useAuthContext();
-  const { documents, error } = useCollection('transactions');
+  const query = ['uid', '==', user.uid];
+  // const query = null;
+  const orderBy = ['createdAt', 'desc'];
+  const { documents, error } = useCollection('transactions', query, orderBy);
 
-  console.log(documents);
-  console.log(documents);
   return (
     <div className={styles.container}>
       <div className={styles.content}>
