@@ -5,7 +5,7 @@ Expenses Tracker app tracks the uses latest expenses. Every user has access to a
 
 The app is deployed and available to use on the link below:
 
-https://saron-quiz-app.netlify.app/
+https://financial-management-react-app.netlify.app/
 ## Tech Stack
 
 **Client:** HTML, CSS, React and Firebase.
