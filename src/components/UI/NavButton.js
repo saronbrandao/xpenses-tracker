@@ -1,29 +1,14 @@
-import styles from './NavButton.module.css';
+import { Link } from 'react-router-dom';
+import styles from './NavButton.module.scss';
 
-console.log(styles.container);
-
-const NavButton = () => {
+const NavButton = (props) => {
   return (
     <>
-      <div className={styles.container}>
-        <a className={styles.button}>Hover me!</a>
-      </div>
+      <Link to={props.link} className={styles.button} onClick={props.onClick}>
+        {props.children}
+      </Link>
     </>
   );
 };
-
-// const NavButton = (props) => {
-//   return (
-//     <>
-//       <div class="container">
-//         <h1>Pure Css Button Hover effect</h1>
-
-//         <a href="#" class="button">
-//           Hover me
-//         </a>
-//       </div>
-//     </>
-//   );
-// };
 
 export default NavButton;

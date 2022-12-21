@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
 import NavButton from './UI/NavButton';
 
-import styles from './NavBar.module.css';
+import styles from './NavBar.module.scss';
 
 const NavBar = () => {
   const { logout } = useLogout();
@@ -17,19 +16,19 @@ const NavBar = () => {
         {!user && (
           <>
             <li>
-              <Link to="/login">Login</Link>
+              <NavButton link={'/login'}>Login</NavButton>
             </li>
             <li>
-              <Link to="signup">Signup</Link>
+              <NavButton link={'/signup'}>Signup</NavButton>
             </li>
           </>
         )}
         {user && (
           <>
             <li>hello, {user.displayName}</li>
-            <li className="btn" onClick={logout}>
-              Logout
-            </li>
+            <NavButton link={'/login'} onClick={logout}>
+              LOGOUT
+            </NavButton>
           </>
         )}
       </ul>
@@ -38,3 +37,7 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+// <li className="btn" onClick={logout}>
+// Logout
+// </li>
