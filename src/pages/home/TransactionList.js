@@ -10,7 +10,6 @@ export const TransactionList = ({ transactions, modalVisible }) => {
 
   const deleteAll = () => {
     modalVisible();
-    // transactions.map((transaction) => deleteDocument(transaction.id));
   };
 
   console.log(transactions.length);
