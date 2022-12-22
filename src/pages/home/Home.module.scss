@@ -1,0 +1,74 @@
+$color: #0cf;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 255, 0);
+  justify-items: center;
+
+  @media (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    max-width: 90%;
+    margin: 60px auto;
+    gap: 50px;
+  }
+
+  .content {
+    grid-row: 2;
+    width: 80%;
+    @media (min-width: 1000px) {
+      grid-row: 1;
+      justify-self: right;
+      width: 500px;
+      min-width: 350px;
+      padding-right: 30px;
+    }
+  }
+
+  .sidebar {
+    width: 85%;
+    @media (min-width: 1000px) {
+      padding-left: 30px;
+      justify-self: center;
+      max-width: 700px;
+    }
+
+    form {
+      padding: 20px;
+      background: rgba($color, 0.5);
+      border-radius: 10px;
+    }
+    input,
+    select {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      box-sizing: border-box;
+      border: 0;
+      border-radius: 4px;
+      color: #555;
+      font-size: 1em;
+    }
+    label {
+      margin: 0 auto 20px;
+      display: block;
+      color: black;
+      font-weight: 500;
+    }
+
+    h3 {
+      color: $color;
+      margin-bottom: 20px;
+    }
+    aside {
+      margin-top: 40px;
+      color: #555;
+    }
+    aside li {
+      margin: 10px;
+    }
+  }
+}

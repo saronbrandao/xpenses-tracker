@@ -2,8 +2,11 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
 import { TransactionList } from './TransactionList';
 
+// components
 import TransactionForm from './TransactionForm';
-import styles from './Home.module.css';
+
+// styles
+import styles from './Home.module.scss';
 
 const Home = () => {
   const { user } = useAuthContext();

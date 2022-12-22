@@ -1,11 +1,18 @@
-import styles from './Home.module.css';
 import { useFirestore } from '../../hooks/useFirestore';
+
+import styles from './TransactionList.module.scss';
 
 export const TransactionList = ({ transactions }) => {
   const { deleteDocument } = useFirestore('transactions');
+  const total = transactions
+    .map((transaction) => +transaction.amount)
+    .reduce((pv, cv) => pv + cv, 0);
 
   return (
     <ul className={styles.transactions}>
+      <div className={styles.totalExpenses}>
+        <p>Total expenses: ${total}</p>
+      </div>
       {transactions.map((transaction) => {
         return (
           <li key={transaction.id}>

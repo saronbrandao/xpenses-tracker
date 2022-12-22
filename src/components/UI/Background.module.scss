@@ -1,10 +1,18 @@
 .background {
-  background-image: url('../../imgs/business.jpg');
-  background-size: 150% auto;
-  background-repeat: no-repeat;
-  filter: blur(1px) saturate(0.3);
-  position: absolute;
+  position: sticky;
+  background-size: cover;
   height: 100%;
   width: 100%;
-  z-index: -10;
+  z-index: 10;
+
+  @media (min-width: 1000px) {
+    background-image: url('../../imgs/business.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1px) saturate(0.3);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
 }

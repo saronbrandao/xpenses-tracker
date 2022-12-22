@@ -12,10 +12,9 @@ const NavBar = () => {
     <nav className={styles.navbar}>
       <ul>
         <li className={styles.title}>myMoney</li>
-
         {!user && (
           <>
-            <li>
+            <li className={styles.loginBtn}>
               <NavButton link={'/login'}>Login</NavButton>
             </li>
             <li>
@@ -25,7 +24,9 @@ const NavBar = () => {
         )}
         {user && (
           <>
-            <li>hello, {user.displayName}</li>
+            <li className={styles.navUserName}>
+              Welcome, {user.displayName}! 😁
+            </li>
             <NavButton link={'/login'} onClick={logout}>
               LOGOUT
             </NavButton>

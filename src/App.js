@@ -19,23 +19,25 @@ function App() {
       {authIsReady && (
         <Router>
           <NavBar />
-          <Background />
-
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={(props) => (!user ? <Redirect to="/login" /> : <Home />)}
-            />
-            <Route
-              path="/login"
-              render={(props) => (user ? <Redirect to="/" /> : <Login />)}
-            />
-            <Route
-              path="/signup"
-              render={(props) => (user ? <Redirect to="/" /> : <Signup />)}
-            />
-          </Switch>
+          <Background>
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={(props) =>
+                  !user ? <Redirect to="/login" /> : <Home />
+                }
+              />
+              <Route
+                path="/login"
+                render={(props) => (user ? <Redirect to="/" /> : <Login />)}
+              />
+              <Route
+                path="/signup"
+                render={(props) => (user ? <Redirect to="/" /> : <Signup />)}
+              />
+            </Switch>
+          </Background>
         </Router>
       )}
     </>

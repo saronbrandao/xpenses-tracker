@@ -4,9 +4,10 @@ import { useLogin } from '../../hooks/useLogin';
 // components
 import FormButton from '../../components/UI/FormButton';
 import FormContainer from '../../components/UI/FormContainer';
-
-import styles from './Login.module.scss';
 import LoadSpinner from '../../components/UI/LoadSpinner';
+
+// styles
+import styles from './Login.module.scss';
 
 const Login = () => {
   const [email, setEmail] = useState('');
