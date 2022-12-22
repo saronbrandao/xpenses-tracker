@@ -12,8 +12,6 @@ export const TransactionList = ({ transactions, modalVisible }) => {
     modalVisible();
   };
 
-  console.log(transactions.length);
-
   return (
     <ul className={styles.transactions}>
       <div className={styles.totalExpenses}>
