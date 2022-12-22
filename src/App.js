@@ -11,7 +11,6 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import NavBar from './components/NavBar';
 import Background from './components/UI/Background';
-import FormContainer from './components/UI/FormContainer';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -44,24 +43,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <Switch>
-<Route path="/" exact>
-  {!user && <Redirect to="/login" />}
-  {user && <Home />}
-</Route>
-<Route path="/login">
-  <FormContainer>
-    {user && <Redirect to="/" />}
-    {!user && <Login />}
-  </FormContainer>
-</Route>
-<Route path="/signup" component={Signup}>
-  <FormContainer>
-    {user && <Redirect to="/" />}
-    {!user && <Signup />}
-  </FormContainer>
-</Route>
-</Switch> */
-}
