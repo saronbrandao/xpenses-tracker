@@ -1,5 +1,8 @@
 .background {
-  position: sticky;
+  background-image: url('../../imgs/business.jpg');
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  position: absolute;
+  background-attachment: fixed;
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -11,8 +14,5 @@
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(1px) saturate(0.3);
-    position: absolute;
-    height: 100%;
-    width: 100%;
   }
 }
