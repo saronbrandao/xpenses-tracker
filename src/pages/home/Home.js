@@ -8,10 +8,9 @@ import TransactionForm from './TransactionForm';
 // styles
 import styles from './Home.module.scss';
 
-const Home = () => {
+const Home = (props) => {
   const { user } = useAuthContext();
   const query = ['uid', '==', user.uid];
-  // const query = null;
   const orderBy = ['createdAt', 'desc'];
   const { documents, error } = useCollection('transactions', query, orderBy);
 
@@ -19,7 +18,12 @@ const Home = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         {error && <p>{error}</p>}
-        {documents && <TransactionList transactions={documents} />}
+        {documents && (
+          <TransactionList
+            transactions={documents}
+            modalVisible={props.modalVisible}
+          />
+        )}
       </div>
       <div className={styles.sidebar}>
         <TransactionForm uid={user.uid} />

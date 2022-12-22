@@ -67,6 +67,32 @@ $color: #0cf;
     font-size: 0.9em;
     cursor: pointer;
   }
+
+  .delete-all {
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(236, 111, 111);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 20px auto;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: red;
+    }
+
+    @media (min-width: 1000px) {
+      margin: 0 auto;
+    }
+
+    p {
+      display: inline-block;
+    }
+  }
 }
 
 @keyframes fadeIn {
