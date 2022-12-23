@@ -1,0 +1,40 @@
+$color: #0cf;
+
+.footer {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 0;
+
+  .container {
+    &__text {
+      display: inline-block;
+      margin-left: 20px;
+      font-size: 0.6rem;
+      color: rgb(0, 0, 0);
+
+      @media (min-width: 800px) {
+        font-size: 0.8rem;
+      }
+    }
+    &__logos {
+      margin-right: 20px;
+      color: red;
+      font-size: 2rem;
+
+      a {
+        color: $color;
+      }
+
+      a:link:active,
+      a:visited:active {
+        color: black;
+      }
+    }
+  }
+}

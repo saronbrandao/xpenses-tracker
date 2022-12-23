@@ -7,12 +7,14 @@ import {
 import { useAuthContext } from './hooks/useAuthContext';
 import { useState } from 'react';
 
+// components
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import NavBar from './components/NavBar';
 import Background from './components/UI/Background';
 import ModalWindow from './components/ModalWindow';
+import Footer from './components/Footer';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -60,6 +62,7 @@ function App() {
           </Switch>
         </Router>
       )}
+      <Footer />
     </>
   );
 }

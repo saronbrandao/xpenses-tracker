@@ -19,24 +19,27 @@ export const TransactionList = ({
 
   return (
     <ul className={styles.transactions}>
-      <div className={styles.totalExpenses}>
-        <p>Total expenses: ${total}</p>
-      </div>
-      {transactions.length > 0 && (
-        <div className={styles['delete-all']} onClick={deleteAll}>
-          <p>Delete All</p>
+      <div className={styles.transactions__buttons}>
+        <div className={styles.totalExpenses}>
+          <p>Total expenses: ${total}</p>
         </div>
-      )}
-
-      {transactions.map((transaction) => {
-        return (
-          <li key={transaction.id}>
-            <p className={styles.name}>{transaction.name}</p>
-            <p className={styles.amount}>$ {transaction.amount}</p>
-            <button onClick={() => deleteDocument(transaction.id)}>x</button>
-          </li>
-        );
-      })}
+        {transactions.length > 0 && (
+          <div className={styles['delete-all']} onClick={deleteAll}>
+            <p>Delete All</p>
+          </div>
+        )}
+      </div>
+      <div className={styles.transactions_container}>
+        {transactions.map((transaction) => {
+          return (
+            <li key={transaction.id}>
+              <p className={styles.name}>{transaction.name}</p>
+              <p className={styles.amount}>$ {transaction.amount}</p>
+              <button onClick={() => deleteDocument(transaction.id)}>x</button>
+            </li>
+          );
+        })}
+      </div>
     </ul>
   );
 };

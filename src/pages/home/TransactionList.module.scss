@@ -6,6 +6,11 @@ $color: #0cf;
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
+
+  @media (min-width: 1000px) {
+    margin-left: 50px;
+  }
+
   li {
     width: 100%;
     border: 1px solid #f2f2f2;
@@ -26,72 +31,92 @@ $color: #0cf;
   }
   .name {
     color: rgb(255, 255, 255);
-    font-size: 1.4em;
+    font-size: 0.8em;
+
+    @media (min-width: 1000px) {
+      font-size: 1.2em;
+    }
   }
+
   .amount {
     margin-left: auto;
     margin-right: 40px;
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: 1.6em;
-  }
-
-  .totalExpenses {
-    width: 300px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: $color;
-    color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px auto 20px auto;
+    font-size: 0.8em;
 
     @media (min-width: 1000px) {
-      margin: 0 auto;
-    }
-
-    p {
-      display: inline-block;
+      font-size: 1.2em;
     }
   }
-  button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: $color;
-    color: white;
-    border: none;
-    padding: 12px 8px;
-    text-align: center;
-    line-height: 0;
-    font-size: 0.9em;
-    cursor: pointer;
-  }
 
-  .delete-all {
-    width: 300px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: rgb(236, 111, 111);
-    color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px auto 20px auto;
-    cursor: pointer;
-    transition: all 0.3s;
-
-    &:hover {
-      background-color: red;
-    }
-
+  &__buttons {
+    display: block;
     @media (min-width: 1000px) {
-      margin: 0 auto;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    p {
-      display: inline-block;
+    .totalExpenses {
+      width: 300px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: $color;
+      color: rgb(0, 0, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto 20px auto;
+
+      @media (min-width: 1000px) {
+        margin: 0 auto;
+      }
+
+      p {
+        display: inline-block;
+      }
+    }
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $color;
+      color: white;
+      border: none;
+      padding: 12px 8px;
+      text-align: center;
+      line-height: 0;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+
+    .delete-all {
+      width: 300px;
+      height: 40px;
+      border-radius: 20px;
+      background-color: rgb(236, 111, 111);
+      color: rgb(0, 0, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px auto 20px auto;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: red;
+      }
+
+      @media (min-width: 1000px) {
+        margin: 0 auto;
+        width: 150px;
+      }
+
+      p {
+        display: inline-block;
+      }
     }
   }
 }
@@ -102,5 +127,38 @@ $color: #0cf;
   }
   to {
     opacity: 1;
+  }
+}
+
+.transactions_container {
+  width: 100%;
+  height: 400px;
+  overflow-x: hidden;
+  padding-right: 50px;
+  margin-bottom: 60px;
+
+  @media (min-width: 1000px) {
+    height: 400px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color, 0.5);
+    border-radius: 20px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba($color, 0.8);
   }
 }

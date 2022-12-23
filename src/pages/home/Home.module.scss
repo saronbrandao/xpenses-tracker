@@ -10,7 +10,7 @@ $color: #0cf;
 
   @media (min-width: 1000px) {
     grid-template-columns: 1fr 1fr;
-    max-width: 90%;
+    max-width: 1920px;
     margin: 60px auto;
     gap: 50px;
   }
@@ -32,7 +32,8 @@ $color: #0cf;
     @media (min-width: 1000px) {
       padding-left: 30px;
       justify-self: center;
-      max-width: 700px;
+      max-width: 500px;
+      justify-self: start;
     }
 
     form {
