@@ -17,6 +17,7 @@ import ModalWindow from './components/ModalWindow';
 function App() {
   const { authIsReady, user } = useAuthContext();
   const [modalVisible, setModalVisible] = useState(false);
+  const [currentDocument, setCurrentDocument] = useState(null);
 
   const modalVisibleHandler = () => {
     setModalVisible((prevState) => !prevState);
@@ -25,7 +26,12 @@ function App() {
     <>
       {authIsReady && (
         <Router>
-          {modalVisible && <ModalWindow setModalVisible={setModalVisible} />}
+          {modalVisible && (
+            <ModalWindow
+              setModalVisible={setModalVisible}
+              currentDocument={currentDocument}
+            />
+          )}
           <NavBar />
           <Background />
           <Switch>
@@ -36,7 +42,10 @@ function App() {
                 !user ? (
                   <Redirect to="/login" />
                 ) : (
-                  <Home modalVisible={modalVisibleHandler} />
+                  <Home
+                    modalVisible={modalVisibleHandler}
+                    setCurrentDocument={setCurrentDocument}
+                  />
                 )
               }
             />

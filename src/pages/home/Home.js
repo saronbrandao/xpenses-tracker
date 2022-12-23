@@ -22,6 +22,7 @@ const Home = (props) => {
           <TransactionList
             transactions={documents}
             modalVisible={props.modalVisible}
+            setCurrentDocument={props.setCurrentDocument}
           />
         )}
       </div>

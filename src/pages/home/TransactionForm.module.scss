@@ -5,10 +5,11 @@ $color: #0cf;
   flex-basis: 85%;
   min-width: 250px;
   flex-direction: column;
-
   padding: 20px;
   padding: 20px;
   color: #effaf0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
 
   label {
     display: block;
@@ -44,4 +45,13 @@ $color: #0cf;
 
 .add-transaction-title {
   color: yellow;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

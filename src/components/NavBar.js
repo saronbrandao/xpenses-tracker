@@ -11,16 +11,22 @@ const NavBar = () => {
   return (
     <nav className={styles.navbar}>
       <ul>
-        <li className={styles.title}>myMoney</li>
+        {user && window.innerWidth >= 400 && (
+          <li className={styles.title}>XPENSES</li>
+        )}
+        {!user && window.innerWidth >= 300 && (
+          <li className={styles.title}>XPENSES</li>
+        )}
+
         {!user && (
-          <>
+          <div className={styles.btnContainers}>
             <li className={styles.loginBtn}>
               <NavButton link={'/login'}>Login</NavButton>
             </li>
-            <li>
+            <li className={styles.signupBtn}>
               <NavButton link={'/signup'}>Signup</NavButton>
             </li>
-          </>
+          </div>
         )}
         {user && (
           <>

@@ -2,7 +2,11 @@ import { useFirestore } from '../../hooks/useFirestore';
 
 import styles from './TransactionList.module.scss';
 
-export const TransactionList = ({ transactions, modalVisible }) => {
+export const TransactionList = ({
+  transactions,
+  modalVisible,
+  setCurrentDocument,
+}) => {
   const { deleteDocument } = useFirestore('transactions');
   const total = transactions
     .map((transaction) => +transaction.amount)
@@ -10,6 +14,7 @@ export const TransactionList = ({ transactions, modalVisible }) => {
 
   const deleteAll = () => {
     modalVisible();
+    setCurrentDocument(transactions);
   };
 
   return (
