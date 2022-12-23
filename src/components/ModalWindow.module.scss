@@ -15,16 +15,26 @@ $color: #0cf;
     display: flex;
     flex-direction: column;
     color: white;
-    gap: 50%;
+    gap: 30px;
     align-items: center;
   }
 
   .modal-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(255, 150, 150);
     padding: 20px 20px;
-    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     font-weight: 700;
     cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: rgb(243, 128, 128);
+    }
   }
 
   h2 {
