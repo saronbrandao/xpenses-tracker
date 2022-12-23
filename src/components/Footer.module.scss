@@ -1,39 +1,43 @@
 $color: #0cf;
 
-.footer {
-  display: flex;
-  height: 50px;
+.footer_container {
   width: 100%;
   background-color: white;
-  justify-content: space-between;
-  align-items: center;
+  height: 50px;
+  width: 100%;
   position: fixed;
   bottom: 0;
   z-index: 0;
+  .footer {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    .container {
+      &__text {
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 0.6rem;
+        color: rgb(0, 0, 0);
 
-  .container {
-    &__text {
-      display: inline-block;
-      margin-left: 20px;
-      font-size: 0.6rem;
-      color: rgb(0, 0, 0);
-
-      @media (min-width: 800px) {
-        font-size: 0.8rem;
+        @media (min-width: 800px) {
+          font-size: 0.8rem;
+        }
       }
-    }
-    &__logos {
-      margin-right: 20px;
-      color: red;
-      font-size: 2rem;
+      &__logos {
+        margin-right: 20px;
+        color: red;
+        font-size: 2rem;
 
-      a {
-        color: $color;
-      }
+        a {
+          color: $color;
+        }
 
-      a:link:active,
-      a:visited:active {
-        color: black;
+        a:link:active,
+        a:visited:active {
+          color: black;
+        }
       }
     }
   }

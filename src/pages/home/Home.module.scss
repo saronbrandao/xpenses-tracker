@@ -9,6 +9,9 @@ $color: #0cf;
   justify-items: center;
 
   @media (min-width: 1000px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     grid-template-columns: 1fr 1fr;
     max-width: 1920px;
     margin: 60px auto;
@@ -32,8 +35,9 @@ $color: #0cf;
     @media (min-width: 1000px) {
       padding-left: 30px;
       justify-self: center;
+      align-self: start;
       max-width: 500px;
-      justify-self: start;
+      margin-right: 20px;
     }
 
     form {
