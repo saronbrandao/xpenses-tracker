@@ -30,7 +30,12 @@ $color: #0cf;
     border-radius: 50%;
     font-weight: 700;
     cursor: pointer;
+    opacity: 0;
     transition: all 0.2s;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 
     &:hover {
       background-color: rgb(243, 128, 128);
@@ -45,5 +50,14 @@ $color: #0cf;
 
   p {
     display: inline-block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

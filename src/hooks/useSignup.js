@@ -47,11 +47,7 @@ export const useSignup = () => {
   };
 
   useEffect(() => {
-    console.log('mount');
-
     return () => {
-      console.log('unmount');
-
       setIsCancelled(true);
     };
   }, []);

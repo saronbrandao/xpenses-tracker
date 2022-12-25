@@ -35,7 +35,12 @@ export const TransactionList = ({
             <li key={transaction.id}>
               <p className={styles.name}>{transaction.name}</p>
               <p className={styles.amount}>$ {transaction.amount}</p>
-              <button onClick={() => deleteDocument(transaction.id)}>x</button>
+              <div
+                className={styles.remove_item}
+                onClick={() => deleteDocument(transaction.id)}
+              >
+                <button>x</button>
+              </div>
             </li>
           );
         })}
