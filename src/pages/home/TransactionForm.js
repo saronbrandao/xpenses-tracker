@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 
 // components
@@ -11,10 +11,12 @@ const TransactionForm = ({ uid }) => {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
   const { addDocument, response } = useFirestore('transactions');
+  const nameInput = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     addDocument({ uid, name, amount });
+    nameInput.current.focus();
   };
 
   useEffect(() => {
@@ -35,6 +37,7 @@ const TransactionForm = ({ uid }) => {
             required
             onChange={(e) => setName(e.target.value)}
             value={name}
+            ref={nameInput}
           />
         </label>
         <label>
