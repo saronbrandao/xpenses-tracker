@@ -16,13 +16,13 @@ const TransactionForm = ({ uid }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addDocument({ uid, name, amount });
-    nameInput.current.focus();
   };
 
   useEffect(() => {
     if (response.success) {
       setName('');
       setAmount('');
+      nameInput.current.focus();
     }
   }, [response.success]);
 
