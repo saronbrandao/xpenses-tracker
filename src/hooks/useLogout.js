@@ -12,7 +12,6 @@ export const useLogout = () => {
     setError(null);
     setIsPending(true);
 
-    // sign the user out
     try {
       await projectAuth.signOut();
 
