@@ -14,14 +14,11 @@ export const useLogin = () => {
     setError(null);
     setIsPending(true);
 
-    // sign the user out
     try {
       const res = await projectAuth.signInWithEmailAndPassword(email, password);
-
-      //dispatch logout action
+      
       dispatch({ type: 'LOGIN', payload: res.user });
 
-      //update state
       if (!isCancelled) {
         setIsPending(false);
         setError(null);
@@ -29,7 +26,6 @@ export const useLogin = () => {
       history.push('/');
     } catch (err) {
       if (!isCancelled) {
-        console.log(err.message);
         setError(err.message);
         setIsPending(false);
       }
