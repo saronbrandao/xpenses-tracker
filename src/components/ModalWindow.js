@@ -1,12 +1,8 @@
 import { useFirestore } from '../hooks/useFirestore';
-// import { useCollection } from '../hooks/useCollection';
-
-// styles
 import styles from './ModalWindow.module.scss';
 
 const ModalWindow = (props) => {
   const { deleteDocument } = useFirestore('transactions');
-  // const { documents } = useCollection('transactions');
 
   const deleteAllHandler = () => {
     props.currentDocument.map((transaction) => deleteDocument(transaction.id));
