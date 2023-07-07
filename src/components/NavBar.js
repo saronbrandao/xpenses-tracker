@@ -44,7 +44,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-// <li className="btn" onClick={logout}>
-// Logout
-// </li>
