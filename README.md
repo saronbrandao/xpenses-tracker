@@ -1,5 +1,7 @@
 # XPenses - Expenses Tracker
 
+<img src="/img/xpenses-app-preview.jpg" alt="blog logo" width="400"/>
+
 XPenses is an expenses tracker web application built with React and Firebase. It provides users with a convenient way to track their expenses and manage budgets.
 
 Check out the live demo: [XPenses Web App](https://master--financial-management-react-app.netlify.app/)
